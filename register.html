@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div id="password-form">
+  <input type="password" id="password-input" placeholder="输入密码">
+  <button onclick="checkPassword()">提交</button>
+</div>
+
+<div id="content" style="display: none;">
+  <h3>
+
+
+
+
+
+
+
+
+    <!DOCTYPE HTML>
+    <html>
+    
+    <head>
+        <meta charset="utf-8">
+        <title>创建您的账号</title>
+        <link rel="icon" href="favicon.ico">
+    </head>
+    
+    <body>
+    
+        <h1>创建您的账号</h1>
+        <form action="form.php" method="post" enctype="multipart/form-data">
+            头像：
+            <input type="file" title="选择头像" accept="image/*">
+        </form>
+        <form action="form.php" method="post">
+            <input type="radio" name="sex" value="男">男
+            <input type="radio" name="sex" value="女">女
+        </form>
+        <form action="form.php" method="post" enctype="application/x-www-form-urlencoded">
+            <input type="text" name="year" placeholder="年" title="生日" max="4" size="1">
+            <input type="text" name="month" placeholder="月" title="生日" max="2" size="1">
+            <input type="text" name="day" placeholder="日" title="生日" max="2" size="1">
+        </form>
+        <form action="form.php" method="post" enctype="application/x-www-form-urlencoded">
+            <input type="text" placeholder="账号" title="账号长度不超过10位" max="10" size="15"><br>
+            <input type="password" placeholder="密码" title="密码长度不超过15位" max="15" size="15">
+        </form>
+    
+        <form action="form.php" method="post" enctype="application/x-www-form-urlencoded">
+            <select name="mobilephone-number" id="mobilephone-number">
+                <option value="+86">+86</option>
+                <option value="+886">+886</option>
+            </select>
+            <input type="text" id="phone-number" placeholder="手机号码" maxlength="11" size="15">
+        </form>
+    
+        <script>
+            // 当选项改变时更新手机号输入框的最大长度
+            document.getElementById("mobilephone-number").addEventListener("change", function () {
+                var selectedOption = this.options[this.selectedIndex].value;
+                var phoneNumberInput = document.getElementById("phone-number");
+                if (selectedOption == "+86") {
+                    phoneNumberInput.maxlength = "11";
+                } else {
+                    phoneNumberInput.maxlength = "9";
+                }
+            });
+        </script>
+        <form action="form.php" method="post" enctype="application/x-www-form-urlencoded">
+    
+        </form>
+        <form action="form.php" method="post">
+            <input type="checkbox" name="rule" value="agree">我已同意<a href="服务协议">服务协议</a>和<a href="隐私保护指引">隐私保护指引</a>
+        </form>
+        <form action="form.php" method="post">
+            <input type="submit" value="注册/登录">
+        </form>
+        <footer>© 2023-present lmy版权所有</footer>
+    </body>
+    
+    </html>
+
+
+
+
+
+
+
+
+  </h3>
+</div>
+<script>
+function checkPassword() {
+  var passwordInput = document.getElementById("password-input");
+  var password = passwordInput.value;
+  // 本密码锁防君子不防小人，既然你这么想看，那就看吧:)
+  if (password === "password") {
+    document.getElementById("password-form").style.display = "none";
+    document.getElementById("content").style.display = "block";
+  } else {
+    alert("密码错误！");
+    passwordInput.value = "";
+  }
+}
+</script>
+</body>
+</html>
