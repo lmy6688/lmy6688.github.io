@@ -24,7 +24,7 @@ signed main(){
 }
 ```
 
-此处#define int long long是将 int 类型定义为 long long 类型，是为了使 int 类型的变量能够存储更大的数值范围。
+此处宏定义#define int long long是将 int 类型定义为 long long 类型，是为了使 int 类型的变量能够存储更大的数值范围。
 
 这段代码中的 `signed` 是指定 `main` 函数的返回类型为 `signed int`。
 
@@ -165,8 +165,8 @@ int main() {
 # n++与++n
 
 ```C++
-int x=100+(n++);//x先等于100加n，n再加1
-int x=100+(++n);//n先加1，x再等于100加n
+int x=100+(n++);//n++是先返回n的值，然后n+1
+int x=100+(++n);//++n是先n+1，然后返回它的值
 ```
 
 # 四舍五入
